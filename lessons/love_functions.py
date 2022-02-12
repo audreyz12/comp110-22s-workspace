@@ -6,9 +6,6 @@ def love(name: str) -> str:
     return f"I love you {name}!"
 
 
-print(love("holly"))
-
-
 def spread_love(to: str, n: int) -> str:
     """Generates a string that repeats a loving message n times."""
     love_note: str = ""
@@ -17,6 +14,3 @@ def spread_love(to: str, n: int) -> str:
         love_note += love(to) + "\n"
         i += 1
     return love_note
-
-
-print(spread_love("sara", 2))
