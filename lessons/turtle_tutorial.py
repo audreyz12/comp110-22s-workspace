@@ -1,4 +1,5 @@
 from turtle import Turtle, colormode, done
+# enable RGB
 colormode(255)
 leo: Turtle = Turtle()
 
