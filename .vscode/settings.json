@@ -22,4 +22,5 @@
     "python.testing.pytestArgs": [],
     "python.envFile": "${workspaceFolder}/.env",
     "python.analysis.typeCheckingMode": "basic",
+    "workbench.colorTheme": "One Monokai",
 }
