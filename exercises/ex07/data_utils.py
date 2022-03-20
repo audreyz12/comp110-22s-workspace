@@ -41,8 +41,6 @@ def head(table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     i: int = 0
     if n > len(table):
         n = len(table)
-    if n == 0:
-        n = 1
     for item in table:
         data: list[str] = []
         i = 0
@@ -50,6 +48,8 @@ def head(table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
             data.append(table[item][i])
             result[item] = data
             i += 1
+        if n == 0:
+            result[item] = []
     return result
 
 
@@ -66,11 +66,11 @@ def concat(xs: dict[str, list[str]], ys: dict[str, list[str]]) -> dict[str, list
     result: dict[str, list[str]] = {}
     for x in xs:
         result[x] = xs[x]
-        for y in ys:
-            if y in xs:
-                result[x] += ys[x]
-            else:
-                result[y] = ys[y]
+    for y in ys:
+        if y in result:
+            result[y] = result[y] + ys[y]
+        else:
+            result[y] = ys[y]
     return result
 
 
